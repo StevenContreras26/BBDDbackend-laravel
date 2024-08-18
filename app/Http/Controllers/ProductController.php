@@ -11,7 +11,8 @@ class ProductController extends Controller
 {
     public function index(IndexRequest $request)
     {
-
-        return IndexResource::collection(Article::all());
+        $query=Article::query();
+        $query->whenCodeSimilarTo($request->code);
+        return IndexResource::collection($query->paginate(10));
     }
 }

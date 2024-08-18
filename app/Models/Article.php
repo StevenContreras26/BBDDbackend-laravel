@@ -55,4 +55,10 @@ class Article extends Model
     {
         return $this->belongsTo(ConductorGauge::class);
     }
+
+    public function scopeWhenCodeSimilarTo($query, $code)
+    {
+        if(!$code)return;
+        return $query->where('code', 'like', '%' . $code . '%');
+    }
 }

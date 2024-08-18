@@ -14,6 +14,14 @@ class IndexResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id'=>$this->id,
+            'family'=>$this->code,
+            'caliber'=>'vacio',
+            'conductor'=>'vacio',
+            'apendix'=>'vacio',
+            'description'=>'vacio',
+            'extra'=>'vacio',
+        ];
     }
 }
