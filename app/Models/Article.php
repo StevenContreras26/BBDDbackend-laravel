@@ -9,6 +9,7 @@ class Article extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'code',
         'section_id',
         'serie_id',
         'family_description_id',
@@ -24,4 +25,34 @@ class Article extends Model
         'color_code',
         'jacket_material',
     ];
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
+    }
+
+    public function serie()
+    {
+        return $this->belongsTo(Serie::class);
+    }
+
+    public function familyDescription()
+    {
+        return $this->belongsTo(FamilyDescription::class);
+    }
+
+    public function stranding()
+    {
+        return $this->belongsTo(StrandingType::class);
+    }
+
+    public function conductorPairTriad()
+    {
+        return $this->belongsTo(ConductorPairTriad::class);
+    }
+
+    public function conductorGauge()
+    {
+        return $this->belongsTo(ConductorGauge::class);
+    }
 }

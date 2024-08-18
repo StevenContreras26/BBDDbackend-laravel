@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SectionController;
 use App\Imports\CodingImport;
 use Illuminate\Http\Request;
@@ -20,3 +21,5 @@ Route::post('/codificacion', function (Request $request) {
     dd($excelPath);
 
 });
+
+Route::get('/products', [ProductController::class, 'index']);
