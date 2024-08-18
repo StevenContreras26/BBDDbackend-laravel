@@ -19,7 +19,7 @@ class IndexResource extends JsonResource
             'family'=>$this->code,
             'caliber'=>'vacio',
             'conductor'=>'vacio',
-            'apendix'=>'vacio',
+            'appendix'=>'vacio',
             'description'=>'vacio',
             'extra'=>'vacio',
         ];
